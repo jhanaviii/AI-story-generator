@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Story Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>AI Story Generator</h1>
+            <button class="collapsible">What is the lm1b Dataset?</button>
+            <div class="content">
+                <p>The 1-Billion Word Language Model Benchmark (lm1b) dataset is a large-scale dataset used for training language models. It consists of over 1 billion words from various online sources, providing a diverse and comprehensive dataset for training and evaluating language models.</p>
+            </div>
+        </div>
+        <form id="story-form">
+            <div class="form-group">
+                <label for="prompt">Enter a prompt for the story:</label>
+                <textarea id="prompt" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="use-lm1b">Use a text from the lm1b dataset as a base:</label>
+                <input type="checkbox" id="use-lm1b">
+            </div>
+            <button type="submit">Generate Story</button>
+        </form>
+        <div id="story-output" class="story-output"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
